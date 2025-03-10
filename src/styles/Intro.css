@@ -1,5 +1,5 @@
 /* Intro.css */
-.intro {
+  .intro {
     display: flex; /* Layout em linha (imagem e texto lado a lado) */
     align-items: center; /* Alinha verticalmente no centro */
     justify-content: center; /* Centraliza horizontalmente na tela */
@@ -10,12 +10,11 @@
   .image-placeholder {
     width: 450px; /* Aumenta a largura da imagem */
     height: 450px; /* Aumenta a altura da imagem */
-    background-color: #e0e0e0; /* Cor de fundo da imagem (placeholder) */
-    border-radius: 10px; /* Bordas arredondadas */
   }
   
   .text {
-    margin-left: 60px; /* Adiciona mais espaçamento entre a imagem e o texto */
+    margin-left: 70px; /* Adiciona mais espaçamento entre a imagem e o texto */
+    margin-right: 70px;
   }
   
   .text h1 {

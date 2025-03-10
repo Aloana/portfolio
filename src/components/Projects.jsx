@@ -20,7 +20,7 @@ function Projects() {
     {
       title: 'PORTFOLIO',
       type: 'WEB',
-      techs: ['HTML5', 'CSS3', 'JS', 'Astro'],
+      techs: ['HTML5', 'CSS3', 'JS', 'React'],
       backgroundColor: '#ffffff',
       textColor: '#000000',
     },

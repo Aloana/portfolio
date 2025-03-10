@@ -1,72 +1,82 @@
 /* Projects.css */
 .projects {
-    padding: 50px 20px; /* Espaçamento interno */
-    background-color: #ffffff; /* Fundo branco */
-  }
+  padding: 50px 20px; /* Espaçamento interno */
+  background-color: #ffffff; /* Fundo branco */
+}
+
+.projects h2 {
+  font-family: 'Bruno Ace SC', sans-serif;
+  font-size: 40px;
+  text-align: left;
+  margin-left: 20px;
+  color: #4b0082;
+  margin-bottom: 40px; /* Espaçamento abaixo do título */
+}
+
+.project-grid {
+  display: grid; /* Layout em grade */
+  grid-template-columns: repeat(3, 1fr); /* Três cards por linha */
+  gap: 30px; /* Espaçamento entre os cards */
+}
+
+.project-card {
+  padding: 60px 20px 60px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3); /* Adiciona sombra leve */
   
-  .projects h2 {
-    font-family: 'Bruno Ace SC', sans-serif;
-    font-size: 36px;
-    text-align: center;
-    color: #4b0082;
-    margin-bottom: 40px; /* Espaçamento abaixo do título */
-  }
-  
-  .project-grid {
-    display: grid; /* Layout em grade */
-    grid-template-columns: repeat(3, 1fr); /* Três cards por linha */
-    gap: 30px; /* Espaçamento entre os cards */
-  }
-  
-  .project-card {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Adiciona sombra leve */
-    
-    display: flex; /* Habilita o flexbox */
-    flex-direction: column; /* Alinha conteúdo verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-  }
-  
-  .project-card:nth-child(2) {
-    background-color: #372460; /* Fundo roxo para o segundo card */
-    color: white; /* Texto branco para contraste */
-  }
-  
-  .project-card h3 {
-    font-family: 'Bruno Ace SC', sans-serif;
-    font-size: 24px;
-    text-align: center; /* Centraliza o texto horizontalmente */
-  }
-  
-  .project-card h4 {
-    font-family: 'Bruno Ace SC', sans-serif;
-    font-size: 20px;
-    text-align: center; /* Centraliza o texto horizontalmente */
-  }
-  
-  .project-card ul {
-    margin-top: 10px;
-  }
-  
-  .project-card ul li {
-    font-family: 'Geologica', sans-serif;
-  }
-  
-  button {
-    margin-top: auto; /* Empurra o botão para o final do card */
-    padding: 10px;
-    width: calc(100% - 40px);
-    border-radius: 5px;
-  }
-  
-  /* Botão no segundo card com fundo branco e texto roxo */
-  .project-card:nth-child(2) button {
-    background-color: white;
-    color: #372460;
-  }
-  
-  /* Botão nos outros cards com fundo preto e texto branco */
-  button:not(.project-card:nth-child(2) button) {
-      background-color:#2C2C2C;color:white;}
-  
+  display: flex; /* Habilita o flexbox */
+  flex-direction: column; /* Alinha conteúdo verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+}
+
+.project-card:nth-child(2) {
+  background-color: #372460; /* Fundo roxo para o segundo card */
+  color: white; /* Texto branco para contraste */
+}
+
+.project-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.project-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 46px;
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+/* Ajuste da lista para remover bolinhas e alinhar à esquerda */
+.project-card ul {
+  margin-top: 10px;
+  padding-left: 0; /* Remove o espaçamento antes dos itens da lista */
+  list-style-type: none; /* Remove as bolinhas */
+}
+
+.project-card ul li {
+  font-family: 'Geologica', sans-serif;
+  font-size: 18px; /* Aumenta o tamanho da fonte */
+  text-align: center; /* Alinha os textos à esquerda */
+  padding-bottom: 5px;
+}
+
+button {
+  font-family: 'Geologica', sans-serif;
+  font-size: 16px;
+  margin-top: auto; /* Empurra o botão para o final do card */
+  padding: 10px;
+  width: calc(100% - 40px);
+  border-radius: 5px;
+}
+
+/* Botão no segundo card com fundo branco e texto roxo */
+.project-card:nth-child(2) button {
+  background-color: white;
+  color: #372460;
+}
+
+/* Botão nos outros cards com fundo preto e texto branco */
+button:not(.project-card:nth-child(2) button) {
+    background-color:#2C2C2C;color:white;
+}

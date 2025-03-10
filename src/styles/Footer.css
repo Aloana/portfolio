@@ -1,0 +1,43 @@
+/* Footer.css */
+.footer {
+    background-color: #4b0082;
+    color: white;
+    padding: 30px;
+    text-align: left;
+  }
+  
+  .footer h3 {
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .footer a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+  }
+  
+  .social-links img {
+    width: 30px;
+    height: auto;
+  }
+  

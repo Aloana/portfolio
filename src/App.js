@@ -5,14 +5,23 @@ import Technologies from './components/Technologies';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <Intro />
-      <Technologies />
-      <Projects />
-      <Footer />
+      <section id="sobre-mim">
+        <Intro />
+      </section>
+      <section id="tecnologias">
+        <Technologies />
+      </section>
+      <section id="projetos">
+        <Projects />
+      </section>
+      <section id="footer">
+        <Footer />
+      </section>
     </div>
   );
 }
