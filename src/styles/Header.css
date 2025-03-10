@@ -1,0 +1,47 @@
+/* Header.css */
+.header {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px 40px; /* Reduzido para ocupar menos espaço */
+  }
+  
+  .navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+  
+  .navbar li {
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    cursor: pointer;
+  }
+  
+  .intro {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaça a imagem e o texto */
+    margin-top: 20px; /* Reduzido para se ajustar ao cabeçalho */
+  }
+  
+  .image-placeholder {
+    width: 400px; /* Aumenta o tamanho da imagem */
+    height: 400px; /* Mantém proporção fixa */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+  }
+  
+  .text {
+    margin-left: 50px; /* Adiciona mais espaçamento entre a imagem e o texto */
+  }
+  
+  .text h1 {
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 36px;
+  }
+  
+  .text p {
+    font-family: 'Geologica', sans-serif;
+    line-height: 1.6; /* Melhora a legibilidade */
+  }
+  
