@@ -19,13 +19,13 @@
   
   .text h1 {
     font-family: 'Bruno Ace SC', sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     color: #4b0082; /* Cor do título */
   }
   
   .text p {
     font-family: 'Geologica', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6; /* Melhora a legibilidade do texto */
   }
   

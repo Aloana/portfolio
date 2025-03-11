@@ -29,6 +29,10 @@
     align-items: center; /* Centraliza horizontalmente */
     padding: 50px; /* Espaçamento interno do card */
   }
+
+  .tech-card:hover {
+    box-shadow: 0px 8px 16px #4b0082;
+  }
   
   .tech-card img {
     width: auto;

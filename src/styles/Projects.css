@@ -35,6 +35,12 @@
   color: white; /* Texto branco para contraste */
 }
 
+.project-card:hover {
+  transform: scale(1.04); /* Aumenta o tamanho do card ao passar o mouse */
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3); /* Adiciona sombra mais forte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .project-card h3 {
   font-family: 'Inter', sans-serif;
   font-size: 24px;
