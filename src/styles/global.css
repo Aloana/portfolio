@@ -1,19 +1,63 @@
 /* Global.css */
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Geologica', sans-serif;
+  box-sizing: border-box;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Bruno Ace SC', sans-serif;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: white;
+  font-weight: 700;
 }
 
 html {
-  scroll-behavior: smooth; /* Rolagem suave */
+  scroll-behavior: smooth;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
+}
+
+section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 60px 20px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 30px 15px;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-size: 14px;
+  }
 }

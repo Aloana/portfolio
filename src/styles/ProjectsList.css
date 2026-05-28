@@ -1,0 +1,419 @@
+.projects-section {
+  width: 100%;
+  box-sizing: border-box;
+  background: #0f0f0f;
+  padding: 60px 20px;
+  margin: 0;
+}
+
+.projects-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.section-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(33.333% - 20px), 1fr));
+  gap: 30px;
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.projects-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.projects-list::-webkit-scrollbar-track {
+  background: rgba(160, 32, 240, 0.1);
+  border-radius: 10px;
+}
+
+.projects-list::-webkit-scrollbar-thumb {
+  background: rgba(160, 32, 240, 0.3);
+  border-radius: 10px;
+}
+
+.projects-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 32, 240, 0.5);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  border: 1px solid rgba(160, 32, 240, 0.2);
+  border-radius: 8px;
+  background-color: rgba(160, 32, 240, 0.02);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-item.featured-project {
+  padding: 40px;
+  min-height: 400px;
+}
+
+.project-item.featured-project {
+  border-bottom: 1px solid rgba(160, 32, 240, 0.2);
+}
+
+.project-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, #A020F0, #C084FC);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: none;
+}
+
+.project-item:hover {
+  background-color: rgba(160, 32, 240, 0.08);
+  border-color: rgba(160, 32, 240, 0.5);
+}
+
+.project-item:hover::before {
+  opacity: 1;
+}
+
+.project-content {
+  flex: 1;
+}
+
+.project-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.project-item:hover .project-title {
+  color: #A020F0;
+}
+
+.project-icon {
+  color: #b0b0b0;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-item:hover .project-icon {
+  color: #A020F0;
+  transform: translate(3px, -3px);
+}
+
+.project-description {
+  color: #b0b0b0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-self: flex-start;
+}
+
+.project-tag {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border: 1px solid rgba(160, 32, 240, 0.4);
+  border-radius: 4px;
+  color: #b0b0b0;
+  background-color: rgba(160, 32, 240, 0.05);
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.project-item:hover .project-tag {
+  border-color: #A020F0;
+  color: #A020F0;
+  background-color: rgba(160, 32, 240, 0.1);
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  color: #C084FC;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-link:hover {
+  color: #A020F0;
+  transform: translateX(4px);
+}
+
+/* Seção de Outros Projetos (Hackathons) */
+.projects-subsection {
+  margin-bottom: 60px;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  color: white;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+
+.subsection-description {
+  font-size: 1rem;
+  color: #b0b0b0;
+  margin: 0 0 30px 0;
+}
+
+.other-projects-section {
+  padding: 40px 40px;
+  border-top: 1px solid rgba(160, 32, 240, 0.2);
+}
+
+.hackathon-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.hackathon-item {
+  padding: 25px;
+  position: relative;
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  border-radius: 8px;
+  background-color: rgba(192, 132, 252, 0.02);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.hackathon-item:hover {
+  border-color: rgba(192, 132, 252, 0.5);
+  background-color: rgba(192, 132, 252, 0.08);
+}
+
+.hackathon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 15px;
+}
+
+.hackathon-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.hackathon-year {
+  font-size: 0.9rem;
+  color: #C084FC;
+  margin: 0;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.hackathon-description {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+}
+
+.hackathon-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hackathon-role {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  border-radius: 4px;
+  color: #b0b0b0;
+  background-color: rgba(192, 132, 252, 0.05);
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.hackathon-item:hover .hackathon-role {
+  border-color: #C084FC;
+  color: #C084FC;
+  background-color: rgba(192, 132, 252, 0.1);
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 40px 20px;
+  }
+
+  .projects-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .project-item {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-tags {
+    width: 100%;
+  }
+
+  .other-projects-section {
+    padding: 30px;
+  }
+
+  .other-projects-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .hackathon-item {
+    padding: 0;
+  }
+
+  .hackathon-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 30px 15px;
+  }
+
+  .projects-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .project-item {
+    padding: 20px;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .project-item:hover {
+    padding-left: 20px;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .other-projects-section {
+    padding: 20px;
+  }
+
+  .other-projects-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .hackathon-header {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .hackathon-title {
+    font-size: 1rem;
+  }
+
+  .hackathon-description {
+    font-size: 0.85rem;
+  }
+
+  .hackathon-roles {
+    gap: 6px;
+  }
+
+  .hackathon-role {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+}

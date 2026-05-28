@@ -1,20 +1,25 @@
 import React from 'react';
 import '../styles/Intro.css';
-import placeholderImage from '../assets/placeholder-image.png'; // Imagem de exemplo
 
 function Intro() {
   return (
-    <div className="intro">
-      <img src={placeholderImage} alt="Minha foto" className="image-placeholder" />
-      <div className="text">
-        <h1>Olá, eu sou a Aloana</h1>
-        <p>
-          Aluna de Sistemas de Informação na XP Educação e analista de desenvolvimento de sistemas,
-          aquela que adora resolver problemas com linhas de código e um pouco de café! Minha especialidade é o desenvolvimento back-end, com foco em PHP e CodeIgniter 4 (CI4).
+    <section id="about" className="intro">
+      <div className="intro-content">
+        <h1 className="intro-title">
+          Hi, I'm <span className="highlight">Aloana</span>
+        </h1>
+        <p className="intro-subtitle">
+          Developer & Problem Solver
         </p>
-        <p>Dá uma olhada nos meus projetos e veja como transformo ideias em realidade!</p>
+        <p className="intro-description">
+          Systems Information student at XP Educação and a passionate systems development analyst. I love turning ideas into reality with clean code and coffee. Specialized in back-end development with a focus on PHP and CodeIgniter 4.
+        </p>
+        <div className="intro-cta">
+          <a href="#projects" className="btn btn-primary">View My Work</a>
+          <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
