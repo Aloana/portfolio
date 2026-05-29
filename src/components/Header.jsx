@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import LanguageSelector from './LanguageSelector';
 import '../styles/Header.css';
 
 function Header() {
@@ -21,9 +22,11 @@ function Header() {
             <li><Link to="/" onClick={closeMenu}>Home</Link></li>
             <li><Link to="/experience-skills" onClick={closeMenu}>Experience & Skills</Link></li>
             <li><Link to="/projects-learning" onClick={closeMenu}>Projects & Learning</Link></li>
-            <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+            <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
           </ul>
         </nav>
+
+        <LanguageSelector />
 
         <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span></span>

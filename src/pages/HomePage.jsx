@@ -1,40 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Target, Code2, Zap, Globe, Lightbulb, Users } from 'lucide-react';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
 function HomePage() {
   const approaches = [
     {
-      icon: '🎯',
+      icon: Target,
       title: 'Results-Driven Approach',
       description: 'Delivering measurable outcomes through strategic planning and meticulous execution.'
     },
     {
-      icon: '🔧',
-      title: 'Modern Tech Stack',
-      description: 'Leveraging cutting-edge technologies and frameworks to build scalable solutions.'
-    },
-    {
-      icon: '⚡',
-      title: 'Performance Focused',
-      description: 'Optimizing code and architecture for speed, reliability, and user experience.'
-    },
-    {
-      icon: '🌍',
+      icon: Globe,
       title: 'Global Mindset',
       description: 'Available across time zones for seamless worldwide collaboration.'
     },
     {
-      icon: '💡',
+      icon: Lightbulb,
       title: 'Innovative Problem Solving',
       description: 'Tackling complex challenges with creative and practical solutions.'
     },
     {
-      icon: '🤝',
+      icon: Users,
       title: 'Team Collaboration',
       description: 'Building strong partnerships and fostering effective communication.'
     }
   ];
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    setSubmitted(true);
+    
+    setTimeout(() => {
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitted(false);
+    }, 3000);
+  };
 
   return (
     <div className="pages-container">
@@ -49,7 +68,7 @@ function HomePage() {
           </p>
           <div className="home-cta">
             <Link to="/experience-skills" className="btn btn-primary">View My Journey</Link>
-            <a href="#contact" className="btn btn-secondary">Get In Touch</a>
+            <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
           </div>
         </div>
       </section>
@@ -66,13 +85,93 @@ function HomePage() {
 
           {/* Approach Cards - Extension of About Section */}
           <div className="approach-cards">
-            {approaches.map((approach, index) => (
-              <div key={index} className="approach-card">
-                <div className="approach-icon">{approach.icon}</div>
-                <h3 className="approach-title">{approach.title}</h3>
-                <p className="approach-description">{approach.description}</p>
+            {approaches.map((approach, index) => {
+              const IconComponent = approach.icon;
+              return (
+                <div key={index} className="approach-card">
+                  <div className="approach-icon">
+                    <IconComponent size={24} />
+                  </div>
+                  <h3 className="approach-title">{approach.title}</h3>
+                  <p className="approach-description">{approach.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact-section home-contact">
+        <div className="contact-container">
+          <div className="contact-header">
+            <h2>Let's work together</h2>
+            <p>Have a project in mind? Feel free to reach out and let's create something amazing together.</p>
+          </div>
+
+          <div className="contact-content">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your name"
+                />
               </div>
-            ))}
+
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  placeholder="Project subject"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  placeholder="Tell me about your project..."
+                  rows="6"
+                ></textarea>
+              </div>
+
+              <button type="submit" className="btn btn-primary submit-btn">
+                Send Message
+              </button>
+
+              {submitted && (
+                <div className="success-message">
+                  ✓ Thank you! Your message has been sent successfully.
+                </div>
+              )}
+            </form>
           </div>
         </div>
       </section>

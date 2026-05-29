@@ -88,7 +88,6 @@
 .experience-content:hover {
   background: rgba(160, 32, 240, 0.08);
   border-color: rgba(160, 32, 240, 0.4);
-  transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(160, 32, 240, 0.1);
 }
 

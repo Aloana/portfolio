@@ -1,0 +1,84 @@
+.language-selector {
+  position: relative;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 2px solid rgba(160, 32, 240, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #e0e0e0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  border-color: #A020F0;
+  color: #A020F0;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(15, 15, 15, 0.98);
+  border: 2px solid rgba(160, 32, 240, 0.3);
+  border-radius: 8px;
+  min-width: 150px;
+  margin-top: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(160, 32, 240, 0.15);
+  z-index: 1001;
+}
+
+.language-option {
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.language-option:hover {
+  background-color: rgba(160, 32, 240, 0.1);
+  color: #A020F0;
+}
+
+.language-option.active {
+  background-color: rgba(160, 32, 240, 0.15);
+  color: #A020F0;
+  border-left-color: #A020F0;
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .language-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .language-dropdown {
+    min-width: 140px;
+    margin-top: 6px;
+  }
+
+  .language-option {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}

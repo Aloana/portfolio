@@ -17,12 +17,13 @@ function ExperienceSkillsPage() {
                 <h3 className="experience-title">Systems Development Analyst</h3>
                 <p className="experience-company">HBI Sociedade de Crédito Direto</p>
                 <p className="experience-description">
-                  Quality Assurance and financial systems development with focus on system validation and backend architecture. Specialized in requirements analysis, API testing, and database optimization for secure financial transactions.
+                  Developing and maintaining robust backend systems. Specializing in PHP and CodeIgniter 4, creating secure APIs, optimizing database queries, and implementing system improvements that enhance user experience and application performance.
                 </p>
                 <div className="experience-tags">
                   <span className="experience-tag">QA</span>
                   <span className="experience-tag">Backend</span>
                   <span className="experience-tag">APIs</span>
+                  <span className="experience-tag">Databases</span>
                 </div>
               </div>
             </div>
@@ -30,33 +31,16 @@ function ExperienceSkillsPage() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="experience-content">
-                <div className="experience-date">2022 – 2023</div>
-                <h3 className="experience-title">Junior Full-Stack Developer</h3>
-                <p className="experience-company">Personal Projects</p>
-                <p className="experience-description">
-                  Built full-stack applications using modern technologies. Developed responsive web applications with React, created backend services with Node.js and Java, and deployed projects on cloud platforms.
-                </p>
-                <div className="experience-tags">
-                  <span className="experience-tag">React</span>
-                  <span className="experience-tag">Node.js</span>
-                  <span className="experience-tag">Java</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="timeline-item">
-              <div className="timeline-dot"></div>
-              <div className="experience-content">
-                <div className="experience-date">2021 – Present</div>
-                <h3 className="experience-title">Systems Information Student</h3>
-                <p className="experience-company">XP Educação</p>
+                <div className="experience-date">Oct 2023 – Apr 2024</div>
+                <h3 className="experience-title">Systems Development Intern</h3>
+                <p className="experience-company">HBI Sociedade de Crédito Direto</p>
                 <p className="experience-description">
                   Pursuing comprehensive knowledge in systems development. Learning software architecture, database design, security principles, and best practices in software engineering through hands-on projects and real-world applications.
                 </p>
                 <div className="experience-tags">
-                  <span className="experience-tag">Software Engineering</span>
-                  <span className="experience-tag">Architecture</span>
-                  <span className="experience-tag">Learning</span>
+                  <span className="experience-tag">Backend</span>
+                  <span className="experience-tag">APIs</span>
+                  <span className="experience-tag">Databases</span>
                 </div>
               </div>
             </div>

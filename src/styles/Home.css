@@ -103,7 +103,6 @@
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(160, 32, 240, 0.3);
 }
 
@@ -115,17 +114,14 @@
 
 .btn-secondary:hover {
   background: rgba(160, 32, 240, 0.1);
-  transform: translateY(-2px);
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -233,39 +229,62 @@
 
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   width: 100%;
 }
 
 .certification-item {
-  padding: 25px;
-  background: rgba(192, 132, 252, 0.05);
-  border: 1px solid rgba(192, 132, 252, 0.15);
-  border-radius: 10px;
+  padding: 32px;
+  background: linear-gradient(135deg, rgba(160, 32, 240, 0.08), rgba(192, 132, 252, 0.03));
+  border: 1.5px solid rgba(160, 32, 240, 0.25);
+  border-radius: 16px;
   transition: all 0.3s ease;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  justify-content: center;
+}
+
+.certification-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #A020F0, #C084FC);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .certification-item:hover {
-  background: rgba(192, 132, 252, 0.1);
-  border-color: rgba(192, 132, 252, 0.3);
-  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(160, 32, 240, 0.15), rgba(192, 132, 252, 0.08));
+  border-color: rgba(160, 32, 240, 0.4);
+  box-shadow: 0 12px 32px rgba(160, 32, 240, 0.15);
+}
+
+.certification-item:hover::before {
+  opacity: 1;
 }
 
 .certification-item h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: white;
-  margin-bottom: 8px;
-  margin: 0 0 8px 0;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
 }
 
 .certification-item p {
-  font-size: 0.95rem;
-  color: #a0a0a0;
-  margin-bottom: 12px;
-  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: #A020F0;
+  margin: 0;
+  font-weight: 500;
 }
 
 .cert-year {
@@ -284,7 +303,21 @@
   }
 
   .certifications-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .certification-item {
+    padding: 24px;
+    min-height: 140px;
+  }
+
+  .certification-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .certification-item p {
+    font-size: 0.85rem;
   }
 }
 
@@ -297,8 +330,14 @@
     font-size: 1.5rem;
   }
 
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .certification-item {
-    padding: 15px;
+    padding: 20px;
+    min-height: 130px;
   }
 
   .certification-item h3 {
@@ -306,6 +345,57 @@
   }
 
   .certification-item p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Home Contact Section */
+.home-contact {
+  min-height: auto !important;
+  padding: 80px 20px !important;
+}
+
+.home-contact .contact-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+.home-contact .contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-contact .form-group {
+  margin-bottom: 20px;
+}
+
+.home-contact .submit-btn {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .home-contact {
+    padding: 60px 20px !important;
+  }
+
+  .home-contact .contact-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-contact {
+    padding: 40px 15px !important;
+  }
+
+  .home-contact .contact-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .home-contact .contact-content {
+    padding: 20px 15px;
   }
 }

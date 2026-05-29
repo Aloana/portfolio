@@ -16,7 +16,7 @@ function ProjectsLearningPage() {
               <div className="project-item featured-project">
                 <div className="project-content">
                   <div className="project-title-group">
-                    <h4 className="project-title">CoChart / Mosaico App</h4>
+                    <h4 className="project-title">Mosaico App</h4>
                   </div>
                   <p className="project-description">
                     Communication and management platform between educational institutions and guardians, built to facilitate real-time communication, event management, and seamless integration between schools and families.
@@ -43,9 +43,9 @@ function ProjectsLearningPage() {
                   </p>
                 </div>
                 <div className="project-tags">
-                  <span className="project-tag">WIP</span>
-                  <span className="project-tag">WIP</span>
-                  <span className="project-tag">WIP</span>
+                  <span className="project-tag">Lorem ipsum</span>
+                  <span className="project-tag">Lorem ipsum</span>
+                  <span className="project-tag">Lorem ipsum</span>
                 </div>
                 <div className="project-links">
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="project-link">
@@ -99,7 +99,7 @@ function ProjectsLearningPage() {
           <div className="projects-subsection">
             <h3 className="subsection-title">Other Projects</h3>
             <p className="subsection-description">Contributions to hackathons and collaborative initiatives</p>
-            
+
             <Carousel className="hackathon-carousel">
               <div className="hackathon-item">
                 <div className="hackathon-header">
@@ -204,30 +204,86 @@ function ProjectsLearningPage() {
         <div className="certifications-container">
           <h2>Learning & Certifications</h2>
           <p className="certifications-description">Continuous learning and professional development</p>
-          
+
           <div className="certifications-grid">
             <div className="certification-item">
-              <h3>JavaScript & TypeScript Fundamentals</h3>
-              <p>Codecademy</p>
-              <span className="cert-year">2024</span>
+              <h3>Databricks Fundamentals</h3>
+              <p>Databricks</p>
             </div>
 
             <div className="certification-item">
-              <h3>React Advanced Patterns</h3>
-              <p>Frontend Masters</p>
-              <span className="cert-year">2024</span>
+              <h3>Microsoft Acceleration - Data Architecture AI</h3>
+              <p>DIO</p>
             </div>
 
             <div className="certification-item">
-              <h3>Database Design & Optimization</h3>
+              <h3>PrograMaria Sprint: AI Agents</h3>
+              <p>PrograMaria</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Elas + Tech | Java Backend Development</h3>
+              <p>Ada Tech</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Backend Journey</h3>
+              <p>WebTech Network</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Tech Journey - Develop Program</h3>
+              <p>Koru</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Security Girls Brasil</h3>
+              <p>WoMakersCode</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Google UX Design Professional Certificate</h3>
               <p>Coursera</p>
-              <span className="cert-year">2023</span>
             </div>
 
             <div className="certification-item">
-              <h3>Agile & Scrum Master</h3>
-              <p>Scrum Alliance</p>
-              <span className="cert-year">2023</span>
+              <h3>Google Project Management Professional Certificate</h3>
+              <p>Coursera</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Google AI Essentials</h3>
+              <p>Coursera</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Minicamp Cloud & Cybersecurity</h3>
+              <p>XP Educação - IGTI</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>CC50 - Harvard's Introduction to Computer Science</h3>
+              <p>Fundação Estudar</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Use of Digital Educational Resources</h3>
+              <p>Ministry of Education (MEC)</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Advanced Training in Education and Technology</h3>
+              <p>Ministry of Education (MEC)</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Web Programmer</h3>
+              <p>IFRS (Federal Institute of Rio Grande do Sul)</p>
+            </div>
+
+            <div className="certification-item">
+              <h3>Web Designer</h3>
+              <p>Senac Minas</p>
             </div>
           </div>
         </div>

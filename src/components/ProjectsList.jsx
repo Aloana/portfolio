@@ -5,7 +5,7 @@ import '../styles/ProjectsList.css';
 export default function ProjectsList() {
   const projects = [
     {
-      title: "CoChart / Mosaico App",
+      title: "Mosaico App",
       description: "Communication and management platform between educational institutions and guardians, developed with TypeScript ecosystem and modern architecture.",
       tags: ["React Native", "Node.js", "TypeScript"],
       link: "#"

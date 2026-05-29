@@ -74,8 +74,8 @@
 }
 
 .project-item:hover {
-  background-color: rgba(160, 32, 240, 0.08);
-  border-color: rgba(160, 32, 240, 0.5);
+  border-color: rgba(160, 32, 240, 0.3);
+  box-shadow: 0 8px 20px rgba(160, 32, 240, 0.08);
 }
 
 .project-item:hover::before {
@@ -121,6 +121,11 @@
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-tags {
@@ -214,8 +219,8 @@
 }
 
 .hackathon-item:hover {
-  border-color: rgba(192, 132, 252, 0.5);
-  background-color: rgba(192, 132, 252, 0.08);
+  border-color: rgba(160, 32, 240, 0.3);
+  box-shadow: 0 8px 20px rgba(160, 32, 240, 0.08);
 }
 
 .hackathon-header {
@@ -252,6 +257,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: auto;
+  justify-content: flex-start;
 }
 
 .hackathon-role {

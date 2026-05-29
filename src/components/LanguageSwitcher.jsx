@@ -3,12 +3,12 @@ import '../styles/Languages.css';
 
 const LanguageSwitcher = () => {
   const languages = useMemo(() => [
-    'Hi, I\'m Aloana',
-    'Olá, meu nome é Aloana',
-    'Hola, mi nombre es Aloana',
-    'Bonjour, je m\'appelle Aloana',
-    'Ciao, mi chiamo Aloana',
-    'Hallo, mein Name ist Aloana',
+    "Hi, I'm Aloana",
+    "Olá, eu sou a Aloana",
+    "Hola, soy Aloana",
+    "Bonjour, je suis Aloana",
+    "Ciao, sono Aloana",
+    "Hallo, ich bin Aloana",
   ], []);
 
   const [displayText, setDisplayText] = useState('');
@@ -56,3 +56,4 @@ const LanguageSwitcher = () => {
 };
 
 export default LanguageSwitcher;
+
