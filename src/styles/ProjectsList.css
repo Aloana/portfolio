@@ -31,31 +31,8 @@
 
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(33.333% - 20px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  max-width: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
-}
-
-.projects-list::-webkit-scrollbar {
-  height: 6px;
-}
-
-.projects-list::-webkit-scrollbar-track {
-  background: rgba(160, 32, 240, 0.1);
-  border-radius: 10px;
-}
-
-.projects-list::-webkit-scrollbar-thumb {
-  background: rgba(160, 32, 240, 0.3);
-  border-radius: 10px;
-}
-
-.projects-list::-webkit-scrollbar-thumb:hover {
-  background: rgba(160, 32, 240, 0.5);
 }
 
 .project-item {
@@ -219,6 +196,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+}
+
+.hackathon-projects::-webkit-scrollbar {
+  display: none;
 }
 
 .hackathon-item {

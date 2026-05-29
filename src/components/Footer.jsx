@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Footer.css';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,16 +17,16 @@ function Footer() {
 
           <div className="social-links">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <Github size={24} />
+              GitHub
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-              <Linkedin size={24} />
+              LinkedIn
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
-              <Twitter size={24} />
+              Twitter
             </a>
             <a href="mailto:your-email@example.com" title="Email">
-              <Mail size={24} />
+              Email
             </a>
           </div>
         </div>

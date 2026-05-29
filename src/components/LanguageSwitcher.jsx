@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import '../styles/Languages.css';
 
 const LanguageSwitcher = () => {
-  const languages = [
+  const languages = useMemo(() => [
     'Hi, I\'m Aloana',
     'Olá, meu nome é Aloana',
     'Hola, mi nombre es Aloana',
     'Bonjour, je m\'appelle Aloana',
     'Ciao, mi chiamo Aloana',
     'Hallo, mein Name ist Aloana',
-  ];
+  ], []);
 
   const [displayText, setDisplayText] = useState('');
   const [languageIndex, setLanguageIndex] = useState(0);
