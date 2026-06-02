@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations';
 import Carousel from '../components/Carousel';
@@ -6,6 +6,107 @@ import Carousel from '../components/Carousel';
 function ProjectsLearningPage() {
   const { language } = useLanguage();
   const t = translations[language];
+  const [isMobile, setIsMobile] = useState(false);
+  const [showAllHackathons, setShowAllHackathons] = useState(false);
+  const [showAllCertifications, setShowAllCertifications] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const updateViewportState = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    updateViewportState();
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', updateViewportState);
+      return () => mediaQuery.removeEventListener('change', updateViewportState);
+    }
+
+    mediaQuery.addListener(updateViewportState);
+    return () => mediaQuery.removeListener(updateViewportState);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setShowAllHackathons(false);
+      setShowAllCertifications(false);
+    }
+  }, [isMobile]);
+
+  const hackathons = [
+    {
+      title: t.hackathonTechXPEdition,
+      description: t.hackathonTechXPEditionDesc,
+      year: '2023',
+      roles: [t.productManager, t.uiuxDesigner],
+    },
+    {
+      title: t.hackathonSambaWaltz,
+      description: t.hackathonSambaWaltzDesc,
+      year: '2023',
+      roles: [t.uiuxDesigner],
+    },
+    {
+      title: t.hackathonNASA,
+      description: t.hackathonNASADesc,
+      year: '2023',
+      roles: [t.frontend, t.uiuxDesigner],
+    },
+    {
+      title: t.hackathonOLX,
+      description: t.hackathonOLXDesc,
+      year: '2023',
+      roles: [t.uiuxDesigner],
+    },
+    {
+      title: t.hackathonArquivoNacional,
+      description: t.hackathonArquivoNacionalDesc,
+      year: '2024',
+      roles: [t.productManager, t.uiuxDesigner],
+    },
+    {
+      title: t.hackathonLowHack,
+      description: t.hackathonLowHackDesc,
+      year: '2026',
+      roles: [t.productManager],
+    },
+    {
+      title: t.hackathonArtemisia,
+      description: t.hackathonArtemisiaDesc,
+      year: '2026',
+      roles: [t.backendDeveloper, t.qa, t.databaseDeveloper],
+    },
+    {
+      title: t.hackathonEPlus,
+      description: t.hackathonEPlusDesc,
+      year: '2026',
+      roles: [t.uiuxDesigner, t.backendDeveloper],
+    },
+  ];
+
+  const certifications = [
+    { title: t.databricksFundamentals, platform: t.databricks },
+    { title: t.microsoftAcceleration, platform: t.dio },
+    { title: t.programariaSprint, platform: t.programaria },
+    { title: t.elasJavaBackend, platform: t.adaTech },
+    { title: t.backendJourney, platform: t.webtech },
+    { title: t.techJourneyDevelop, platform: t.koru },
+    { title: t.securityGirls, platform: t.womakerscode },
+    { title: t.googleUXDesign, platform: t.coursera },
+    { title: t.googleProjectManagement, platform: t.coursera },
+    { title: t.googleAIEssentials, platform: t.coursera },
+    { title: t.minicampCloud, platform: t.xpEducacao },
+    { title: t.cc50Harvard, platform: t.fundacaoEstudar },
+    { title: t.digitalEducational, platform: t.mec },
+    { title: t.advancedEducationTech, platform: t.mec },
+    { title: t.webProgrammer, platform: t.ifrs },
+    { title: t.webDesigner, platform: t.senacMinas },
+  ];
+
+  const visibleHackathons = isMobile && !showAllHackathons ? hackathons.slice(0, 5) : hackathons;
+  const visibleCertifications = isMobile && !showAllCertifications ? certifications.slice(0, 5) : certifications;
 
   return (
     <div className="pages-container">
@@ -106,100 +207,34 @@ function ProjectsLearningPage() {
             <p className="subsection-description">{t.contributionsDescription}</p>
 
             <Carousel className="hackathon-carousel">
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonTechXPEdition}</h4>
-                  <p className="hackathon-year">2023</p>
+              {visibleHackathons.map((hackathon) => (
+                <div className="hackathon-item" key={hackathon.title}>
+                  <div className="hackathon-header">
+                    <h4 className="hackathon-title">{hackathon.title}</h4>
+                    <p className="hackathon-year">{hackathon.year}</p>
+                  </div>
+                  <p className="hackathon-description">{hackathon.description}</p>
+                  <div className="hackathon-roles">
+                    {hackathon.roles.map((role) => (
+                      <span className="hackathon-role" key={role}>{role}</span>
+                    ))}
+                  </div>
                 </div>
-                <p className="hackathon-description">{t.hackathonTechXPEditionDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.productManager}</span>
-                  <span className="hackathon-role">{t.uiuxDesigner}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonSambaWaltz}</h4>
-                  <p className="hackathon-year">2023</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonSambaWaltzDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.uiuxDesigner}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonNASA}</h4>
-                  <p className="hackathon-year">2023</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonNASADesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.frontend}</span>
-                  <span className="hackathon-role">{t.uiuxDesigner}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonOLX}</h4>
-                  <p className="hackathon-year">2023</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonOLXDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.uiuxDesigner}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonArquivoNacional}</h4>
-                  <p className="hackathon-year">2024</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonArquivoNacionalDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.productManager}</span>
-                  <span className="hackathon-role">{t.uiuxDesigner}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonLowHack}</h4>
-                  <p className="hackathon-year">2026</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonLowHackDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.productManager}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonArtemisia}</h4>
-                  <p className="hackathon-year">2026</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonArtemisiaDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.backendDeveloper}</span>
-                  <span className="hackathon-role">{t.qa}</span>
-                  <span className="hackathon-role">{t.databaseDeveloper}</span>
-                </div>
-              </div>
-
-              <div className="hackathon-item">
-                <div className="hackathon-header">
-                  <h4 className="hackathon-title">{t.hackathonEPlus}</h4>
-                  <p className="hackathon-year">2026</p>
-                </div>
-                <p className="hackathon-description">{t.hackathonEPlusDesc}</p>
-                <div className="hackathon-roles">
-                  <span className="hackathon-role">{t.uiuxDesigner}</span>
-                  <span className="hackathon-role">{t.backendDeveloper}</span>
-                </div>
-              </div>
+              ))}
             </Carousel>
+
+            {isMobile && hackathons.length > 5 && (
+              <div className="mobile-section-action">
+                <button
+                  type="button"
+                  className="mobile-more-button"
+                  onClick={() => setShowAllHackathons((current) => !current)}
+                  aria-expanded={showAllHackathons}
+                >
+                  {showAllHackathons ? t.viewLess : t.viewMore}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -211,86 +246,26 @@ function ProjectsLearningPage() {
           <p className="certifications-description">{t.continuousLearning}</p>
 
           <div className="certifications-grid">
-            <div className="certification-item">
-              <h3>{t.databricksFundamentals}</h3>
-              <p>{t.databricks}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.microsoftAcceleration}</h3>
-              <p>{t.dio}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.programariaSprint}</h3>
-              <p>{t.programaria}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.elasJavaBackend}</h3>
-              <p>{t.adaTech}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.backendJourney}</h3>
-              <p>{t.webtech}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.techJourneyDevelop}</h3>
-              <p>{t.koru}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.securityGirls}</h3>
-              <p>{t.womakerscode}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.googleUXDesign}</h3>
-              <p>{t.coursera}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.googleProjectManagement}</h3>
-              <p>{t.coursera}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.googleAIEssentials}</h3>
-              <p>{t.coursera}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.minicampCloud}</h3>
-              <p>{t.xpEducacao}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.cc50Harvard}</h3>
-              <p>{t.fundacaoEstudar}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.digitalEducational}</h3>
-              <p>{t.mec}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.advancedEducationTech}</h3>
-              <p>{t.mec}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.webProgrammer}</h3>
-              <p>{t.ifrs}</p>
-            </div>
-
-            <div className="certification-item">
-              <h3>{t.webDesigner}</h3>
-              <p>{t.senacMinas}</p>
-            </div>
+            {visibleCertifications.map((certification) => (
+              <div className="certification-item" key={certification.title}>
+                <h3>{certification.title}</h3>
+                <p>{certification.platform}</p>
+              </div>
+            ))}
           </div>
+
+          {isMobile && certifications.length > 5 && (
+            <div className="mobile-section-action">
+              <button
+                type="button"
+                className="mobile-more-button"
+                onClick={() => setShowAllCertifications((current) => !current)}
+                aria-expanded={showAllCertifications}
+              >
+                {showAllCertifications ? t.viewLess : t.viewMore}
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>

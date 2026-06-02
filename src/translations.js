@@ -89,6 +89,8 @@ const translations = {
     contributionsDescription: 'Contributions to hackathons and collaborative initiatives',
     learningCertifications: 'Learning & Certifications',
     continuousLearning: 'Continuous learning and professional development',
+    viewMore: 'View more',
+    viewLess: 'View less',
     
     // Contact Page
     contactPageTitle: "Let's work together",
@@ -243,6 +245,8 @@ const translations = {
     contributionsDescription: 'Contribuições para hackathons e iniciativas colaborativas',
     learningCertifications: 'Aprendizado & Certificações',
     continuousLearning: 'Aprendizado contínuo e desenvolvimento profissional',
+    viewMore: 'Ver mais',
+    viewLess: 'Ver menos',
     
     // Contact Page
     contactPageTitle: 'Vamos trabalhar juntos',

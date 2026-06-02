@@ -305,6 +305,11 @@
     gap: 20px;
   }
 
+  .project-item.featured-project {
+    min-height: auto;
+    padding: 28px;
+  }
+
   .project-title {
     font-size: 1.3rem;
   }
@@ -322,7 +327,7 @@
   }
 
   .hackathon-item {
-    padding: 0;
+    padding: 22px;
   }
 
   .hackathon-title {
@@ -358,6 +363,11 @@
     flex-direction: column;
   }
 
+  .project-item.featured-project {
+    min-height: auto;
+    padding: 20px;
+  }
+
   .project-item:hover {
     padding-left: 20px;
   }
@@ -383,6 +393,10 @@
     font-size: 1.3rem;
   }
 
+  .hackathon-item {
+    padding: 18px;
+  }
+
   .hackathon-header {
     flex-direction: column;
     gap: 5px;
@@ -403,5 +417,39 @@
   .hackathon-role {
     font-size: 0.7rem;
     padding: 4px 10px;
+  }
+}
+
+.mobile-section-action {
+  display: none;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.mobile-more-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(160, 32, 240, 0.45);
+  background: rgba(160, 32, 240, 0.08);
+  color: #C084FC;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-more-button:hover {
+  background: rgba(160, 32, 240, 0.16);
+  border-color: rgba(160, 32, 240, 0.7);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .mobile-section-action {
+    display: flex;
   }
 }

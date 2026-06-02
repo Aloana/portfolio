@@ -25,6 +25,7 @@
 .language-dropdown {
   position: absolute;
   top: 100%;
+  left: auto;
   right: 0;
   background-color: rgba(15, 15, 15, 0.98);
   border: 2px solid rgba(160, 32, 240, 0.3);
@@ -75,10 +76,36 @@
   .language-dropdown {
     min-width: 140px;
     margin-top: 6px;
+    left: 0;
+    right: auto;
   }
 
   .language-option {
     padding: 10px 12px;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-toggle {
+    padding: 6px 8px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .language-toggle svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .language-dropdown {
+    min-width: 120px;
+    left: 0;
+    right: auto;
+  }
+
+  .language-option {
+    padding: 8px 10px;
+    font-size: 12px;
   }
 }
