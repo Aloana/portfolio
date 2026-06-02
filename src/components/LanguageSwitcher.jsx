@@ -22,21 +22,17 @@ const LanguageSwitcher = () => {
 
     const timer = setTimeout(() => {
       if (!isDeleting) {
-        // Digitando
         if (charIndex < currentLanguage.length) {
           setDisplayText(currentLanguage.substring(0, charIndex + 1));
           setCharIndex(charIndex + 1);
         } else {
-          // Terminou de digitar, aguarde antes de apagar
           setTimeout(() => setIsDeleting(true), 1500);
         }
       } else {
-        // Apagando
         if (charIndex > 0) {
           setDisplayText(currentLanguage.substring(0, charIndex - 1));
           setCharIndex(charIndex - 1);
         } else {
-          // Terminou de apagar, vai para próximo idioma
           setIsDeleting(false);
           setLanguageIndex((prev) => (prev + 1) % languages.length);
           setCharIndex(0);

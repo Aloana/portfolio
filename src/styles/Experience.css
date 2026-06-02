@@ -143,7 +143,6 @@
   font-family: 'Courier New', monospace;
 }
 
-/* Responsivo */
 @media (max-width: 1024px) {
   .experience-container {
     max-width: 100%;

@@ -66,13 +66,12 @@ function HomePage() {
       <section id="home" className="home-section" style={{
         position: "relative",
         overflow: "hidden",
-        backgroundColor: "#0b071a", // Um tom de preto/roxo ultra escuro de fundo para casar com o efeito
-        // O segredo está aqui: um gradiente radial posicionado na parte inferior central (bottom center)
+        backgroundColor: "#0b071a",
         backgroundImage: "radial-gradient(circle at bottom, rgba(147, 51, 234, 0.15) 0%, transparent 60%)"
       }}>
         <StarsBackground
-          starCount={1000} // Se achar poluído, pode diminuir para 800 ou 1000
-          speed={15}       // Quanto menor esse número, mais lento e calmo fica o movimento!
+          starCount={1000}
+          speed={15}
           starColor="#ffffff"
         />
         <div className="home-content relative z-10">
@@ -97,7 +96,6 @@ function HomePage() {
             {t.aboutDescription}
           </p>
 
-          {/* Approach Cards - Extension of About Section */}
           <div className="approach-cards">
             {approachCardData.map((approach, index) => {
               const IconComponent = approach.icon;

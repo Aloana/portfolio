@@ -12,12 +12,10 @@ export const useLanguage = () => {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    // Verifica localStorage para idioma salvo, senão usa 'en'
     return localStorage.getItem('selectedLanguage') || 'en';
   });
 
   useEffect(() => {
-    // Salva o idioma no localStorage
     localStorage.setItem('selectedLanguage', language);
   }, [language]);
 

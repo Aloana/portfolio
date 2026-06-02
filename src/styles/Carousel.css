@@ -16,7 +16,6 @@
   scroll-behavior: smooth;
   width: 100%;
   flex: 1;
-  /* Hide scrollbar */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -63,7 +62,6 @@
   order: 1;
 }
 
-/* Tablet: 2 cards */
 @media (max-width: 1024px) {
   .carousel-container {
     grid-auto-columns: calc((100% - 15px) / 2);
@@ -82,7 +80,6 @@
   }
 }
 
-/* Mobile and small tablets: stack cards vertically */
 @media (max-width: 768px) {
   .carousel-wrapper {
     flex-direction: column;
@@ -108,7 +105,6 @@
   }
 }
 
-/* Mobile: 1 card */
 @media (max-width: 480px) {
   .carousel-wrapper {
     gap: 8px;

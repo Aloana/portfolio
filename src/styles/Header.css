@@ -112,7 +112,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 24px;
-    height: 14px; /* Altura compacta para um visual elegante */
+    height: 14px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -120,7 +120,6 @@
     z-index: 1001;
   }
 
-  /* As linhas internas do hambúrguer */
   .menu-toggle span {
     width: 100%;
     height: 2px;
@@ -130,21 +129,18 @@
     transform-origin: center;
   }
 
-  /* Charme futurista: a segunda linha é mais curta por padrão */
   .menu-toggle span:last-child {
     width: 70%;
-    align-self: flex-end; /* Alinha o traço menor à direita */
+    align-self: flex-end;
   }
 
-  /* --- ANIMAÇÃO QUANDO O MENU ESTIVER ATIVO --- */
-  /* Quando o menu abrir, os dois traços se cruzam formando um "X" minimalista */
   .menu-toggle.active span:first-child {
     transform: translateY(6px) rotate(45deg);
-    background-color: #A020F0; /* Muda para o roxo do projeto ao abrir */
+    background-color: #A020F0;
   }
 
   .menu-toggle.active span:last-child {
-    width: 100%; /* Estica para igualar */
+    width: 100%;
     transform: translateY(-6px) rotate(-45deg);
     background-color: #A020F0;
   }
@@ -195,13 +191,13 @@
   }
 
   .logo a {
-    font-size: 16px; /* Diminuído levemente de 18px para blindar contra quebras */
+    font-size: 16px;
     letter-spacing: -0.5px;
   }
 
   .navbar li a {
     font-size: 14px;
-    padding: 12px 20px; /* Melhora a área de clique no menu aberto */
+    padding: 12px 20px;
   }
 
   .navbar.active {

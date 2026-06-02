@@ -3,7 +3,7 @@ import { useMotionValue, useSpring } from "framer-motion";
 import { cn } from "../utils/cn";
 
 export const StarsBackground = ({
-  starCount = 600, // Diminuído o teto global para evitar sobrecarga
+  starCount = 600,
   starColor = "#ffffff",
   speed = 15,
   className,
@@ -30,7 +30,6 @@ export const StarsBackground = ({
       
       const isMobile = width < 768;
       
-      // Freio de Densidade: No mobile limitamos estritamente a um máximo de 60 a 80 estrelas
       const maxStars = isMobile ? 130 : starCount;
       const area = width * height;
       const adjustedCount = Math.min(maxStars, Math.floor(area * 0.00035));
@@ -39,7 +38,6 @@ export const StarsBackground = ({
         newStars.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          // Estrelas um pouco menores no mobile para dar mais elegância
           radius: Math.random() * (isMobile ? 0.5 : 0.8) + 0.2,
           alpha: Math.random(),
         });
@@ -69,9 +67,8 @@ export const StarsBackground = ({
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Checa se é mobile para aplicar um redutor drástico de velocidade física
       const isMobile = window.innerWidth < 768;
-      const mobileSpeedModifier = isMobile ? 0.25 : 1; // Corta 75% da velocidade no mobile
+      const mobileSpeedModifier = isMobile ? 0.25 : 1;
 
       stars.forEach((star) => {
         ctx.beginPath();
@@ -80,7 +77,6 @@ export const StarsBackground = ({
         ctx.globalAlpha = star.alpha;
         ctx.fill();
 
-        // Movimento com o freio aplicado para telas pequenas
         star.y += animatedSpeed.get() * 0.005 * mobileSpeedModifier; 
         
         if (star.y > canvas.height) {

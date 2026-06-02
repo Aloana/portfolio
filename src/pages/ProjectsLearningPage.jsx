@@ -239,7 +239,6 @@ function ProjectsLearningPage() {
         </div>
       </section>
 
-      {/* Certifications & Courses Section */}
       <section className="certifications-section">
         <div className="certifications-container">
           <h2>{t.learningCertifications}</h2>

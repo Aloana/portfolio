@@ -26,11 +26,9 @@ function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend service
     console.log('Form submitted:', formData);
     setSubmitted(true);
     
-    // Reset form after 3 seconds
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' });
       setSubmitted(false);
