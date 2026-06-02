@@ -4,6 +4,7 @@ import { Target, Code2, Zap, Globe, Lightbulb, Users } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import { StarsBackground } from "../components/StarsBackground";
 
 function HomePage() {
   const { language } = useLanguage();
@@ -53,7 +54,7 @@ function HomePage() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setSubmitted(true);
-    
+
     setTimeout(() => {
       setFormData({ name: '', email: '', subject: '', message: '' });
       setSubmitted(false);
@@ -62,8 +63,19 @@ function HomePage() {
 
   return (
     <div className="pages-container">
-      <section id="home" className="home-section">
-        <div className="home-content">
+      <section id="home" className="home-section" style={{
+        position: "relative",
+        overflow: "hidden",
+        backgroundColor: "#0b071a", // Um tom de preto/roxo ultra escuro de fundo para casar com o efeito
+        // O segredo está aqui: um gradiente radial posicionado na parte inferior central (bottom center)
+        backgroundImage: "radial-gradient(circle at bottom, rgba(147, 51, 234, 0.15) 0%, transparent 60%)"
+      }}>
+        <StarsBackground
+          starCount={1000} // Se achar poluído, pode diminuir para 800 ou 1000
+          speed={15}       // Quanto menor esse número, mais lento e calmo fica o movimento!
+          starColor="#ffffff"
+        />
+        <div className="home-content relative z-10">
           <h1 className="home-title">
             <LanguageSwitcher />
           </h1>

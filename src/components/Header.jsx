@@ -32,7 +32,7 @@ function Header() {
 
         <LanguageSelector />
 
-        <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="menu-toggle ${menuAberto ? 'active' : ''}" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span></span>
           <span></span>
           <span></span>
