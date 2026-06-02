@@ -1,7 +1,8 @@
 {
-  "name": "portfolio_react",
+  "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://aloana.github.io/portfolio",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",

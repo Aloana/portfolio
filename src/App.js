@@ -23,7 +23,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/portfolio">
         <div className="App">
           <Header />
           <Routes>
