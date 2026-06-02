@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations';
 import '../styles/Contact.css';
 
 function ContactPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,14 +42,14 @@ function ContactPage() {
       <section className="contact-section">
         <div className="contact-container">
           <div className="contact-header">
-            <h1>Get in Touch</h1>
-            <p>Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.</p>
+            <h1>{t.contactPageTitle}</h1>
+            <p>{t.contactPageDescription}</p>
           </div>
 
           <div className="contact-content">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">{t.name}</label>
                 <input
                   type="text"
                   id="name"
@@ -52,12 +57,12 @@ function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Your name"
+                  placeholder={t.yourName}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{t.email}</label>
                 <input
                   type="email"
                   id="email"
@@ -65,12 +70,12 @@ function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="your@email.com"
+                  placeholder={t.yourEmail}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">{t.subject}</label>
                 <input
                   type="text"
                   id="subject"
@@ -78,30 +83,30 @@ function ContactPage() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  placeholder="Project subject"
+                  placeholder={t.projectSubject}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">{t.message}</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Tell me about your project..."
+                  placeholder={t.tellAboutProject}
                   rows="6"
                 ></textarea>
               </div>
 
               <button type="submit" className="btn btn-primary submit-btn">
-                Send Message
+                {t.sendMessage}
               </button>
 
               {submitted && (
                 <div className="success-message">
-                  ✓ Thank you! Your message has been sent successfully.
+                  {t.messageSent}
                 </div>
               )}
             </form>

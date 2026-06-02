@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Code2, Zap, Globe, Lightbulb, Users } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
 function HomePage() {
-  const approaches = [
+  const { language } = useLanguage();
+  const t = translations[language];
+
+  const approachCardData = [
     {
       icon: Target,
-      title: 'Results-Driven Approach',
-      description: 'Delivering measurable outcomes through strategic planning and meticulous execution.'
+      titleKey: 'resultsDrivenApproach',
+      descriptionKey: 'resultsDrivenDescription'
     },
     {
       icon: Globe,
-      title: 'Global Mindset',
-      description: 'Available across time zones for seamless worldwide collaboration.'
+      titleKey: 'globalMindset',
+      descriptionKey: 'globalMindsetDescription'
     },
     {
       icon: Lightbulb,
-      title: 'Innovative Problem Solving',
-      description: 'Tackling complex challenges with creative and practical solutions.'
+      titleKey: 'innovativeProblemSolving',
+      descriptionKey: 'innovativeProblemSolvingDescription'
     },
     {
       icon: Users,
-      title: 'Team Collaboration',
-      description: 'Building strong partnerships and fostering effective communication.'
-    }
+      titleKey: 'teamCollaboration',
+      descriptionKey: 'teamCollaborationDescription'
+    },
   ];
 
   const [formData, setFormData] = useState({
@@ -62,38 +67,35 @@ function HomePage() {
           <h1 className="home-title">
             <LanguageSwitcher />
           </h1>
-          <p className="home-subtitle">Developer & Problem Solver</p>
+          <p className="home-subtitle">{t.homeSubtitle}</p>
           <p className="home-description">
-            Systems Information student at XP Educação and a passionate systems development analyst. I love turning ideas into reality with clean code and coffee.
+            {t.homeDescription}
           </p>
           <div className="home-cta">
-            <Link to="/experience-skills" className="btn btn-primary">View My Journey</Link>
-            <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
+            <Link to="/experience-skills" className="btn btn-primary">{t.viewMyJourney}</Link>
+            <Link to="/contact" className="btn btn-secondary">{t.getInTouch}</Link>
           </div>
         </div>
       </section>
 
       <section id="about" className="intro">
         <div className="intro-content">
-          <h2>About Me</h2>
+          <h2>{t.aboutMe}</h2>
           <p className="intro-description">
-            Information Systems student and software professional with a versatile background spanning systems analysis and
-            academic research. Expertise in bridging the gap between technical execution and strategic oversight, with a focus
-            on Backend Architecture, Quality Assurance, and Database Systems. Proven track record in financial
-            systems and a deep interest in the ethical implementation of AI and data privacy.
+            {t.aboutDescription}
           </p>
 
           {/* Approach Cards - Extension of About Section */}
           <div className="approach-cards">
-            {approaches.map((approach, index) => {
+            {approachCardData.map((approach, index) => {
               const IconComponent = approach.icon;
               return (
                 <div key={index} className="approach-card">
                   <div className="approach-icon">
                     <IconComponent size={24} />
                   </div>
-                  <h3 className="approach-title">{approach.title}</h3>
-                  <p className="approach-description">{approach.description}</p>
+                  <h3 className="approach-title">{t[approach.titleKey]}</h3>
+                  <p className="approach-description">{t[approach.descriptionKey]}</p>
                 </div>
               );
             })}
@@ -104,14 +106,14 @@ function HomePage() {
       <section id="contact" className="contact-section home-contact">
         <div className="contact-container">
           <div className="contact-header">
-            <h2>Let's work together</h2>
-            <p>Have a project in mind? Feel free to reach out and let's create something amazing together.</p>
+            <h2>{t.letWorkTogether}</h2>
+            <p>{t.letWorkTogetherDescription}</p>
           </div>
 
           <div className="contact-content">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">{t.name}</label>
                 <input
                   type="text"
                   id="name"
@@ -119,12 +121,12 @@ function HomePage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Your name"
+                  placeholder={t.yourName}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{t.email}</label>
                 <input
                   type="email"
                   id="email"
@@ -132,12 +134,12 @@ function HomePage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="your@email.com"
+                  placeholder={t.yourEmail}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">{t.subject}</label>
                 <input
                   type="text"
                   id="subject"
@@ -145,30 +147,30 @@ function HomePage() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  placeholder="Project subject"
+                  placeholder={t.projectSubject}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">{t.message}</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  placeholder="Tell me about your project..."
+                  placeholder={t.tellAboutProject}
                   rows="6"
                 ></textarea>
               </div>
 
               <button type="submit" className="btn btn-primary submit-btn">
-                Send Message
+                {t.sendMessage}
               </button>
 
               {submitted && (
                 <div className="success-message">
-                  ✓ Thank you! Your message has been sent successfully.
+                  {t.messageSent}
                 </div>
               )}
             </form>

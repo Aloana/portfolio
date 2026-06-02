@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import '../styles/LanguageSelector.css';
 
 function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const { language, changeLanguage } = useLanguage();
 
   const languages = [
     { code: 'en', name: 'English' },
@@ -12,10 +13,8 @@ function LanguageSelector() {
   ];
 
   const handleLanguageChange = (code) => {
-    setSelectedLanguage(code);
+    changeLanguage(code);
     setIsOpen(false);
-    // Aqui você pode disparar uma ação para mudar o idioma do site
-    window.dispatchEvent(new CustomEvent('languageChange', { detail: { language: code } }));
   };
 
   return (
@@ -26,7 +25,7 @@ function LanguageSelector() {
         aria-label="Select language"
       >
         <Globe size={20} />
-        <span>{selectedLanguage.toUpperCase()}</span>
+        <span>{language.toUpperCase()}</span>
       </button>
 
       {isOpen && (
@@ -34,7 +33,7 @@ function LanguageSelector() {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              className={`language-option ${selectedLanguage === lang.code ? 'active' : ''}`}
+              className={`language-option ${language === lang.code ? 'active' : ''}`}
               onClick={() => handleLanguageChange(lang.code)}
             >
               {lang.name}

@@ -1,23 +1,28 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../translations';
 
 function ExperienceSkillsPage() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <div className="pages-container">
       <section id="experience" className="experience-section">
         <div className="experience-container">
           <div className="experience-header">
-            <h2>Professional Experience</h2>
-            <p>My journey in software development and system analysis</p>
+            <h2>{t.professionalExperience}</h2>
+            <p>{t.myJourney}</p>
           </div>
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div className="experience-content">
                 <div className="experience-date">May 2024 – May 2025</div>
-                <h3 className="experience-title">Systems Development Analyst</h3>
-                <p className="experience-company">HBI Sociedade de Crédito Direto</p>
+                <h3 className="experience-title">{t.systemsDevelopmentAnalyst}</h3>
+                <p className="experience-company">{t.hbi}</p>
                 <p className="experience-description">
-                  Developing and maintaining robust backend systems. Specializing in PHP and CodeIgniter 4, creating secure APIs, optimizing database queries, and implementing system improvements that enhance user experience and application performance.
+                  {t.experienceDescription1}
                 </p>
                 <div className="experience-tags">
                   <span className="experience-tag">QA</span>
@@ -32,10 +37,10 @@ function ExperienceSkillsPage() {
               <div className="timeline-dot"></div>
               <div className="experience-content">
                 <div className="experience-date">Oct 2023 – Apr 2024</div>
-                <h3 className="experience-title">Systems Development Intern</h3>
-                <p className="experience-company">HBI Sociedade de Crédito Direto</p>
+                <h3 className="experience-title">{t.systemsDevelopmentIntern}</h3>
+                <p className="experience-company">{t.hbi}</p>
                 <p className="experience-description">
-                  Pursuing comprehensive knowledge in systems development. Learning software architecture, database design, security principles, and best practices in software engineering through hands-on projects and real-world applications.
+                  {t.experienceDescription2}
                 </p>
                 <div className="experience-tags">
                   <span className="experience-tag">Backend</span>
@@ -51,70 +56,70 @@ function ExperienceSkillsPage() {
       <section id="skills" className="skills-section">
         <div className="skills-container">
           <div className="skills-header">
-            <h2>Skills & Technologies</h2>
+            <h2>{t.skillsAndTechnologies}</h2>
           </div>
 
           <div className="skills-subsection">
-            <h3 className="subsection-title">Technical Skills</h3>
+            <h3 className="subsection-title">{t.technicalSkills}</h3>
             <div className="skills-grid">
               <div className="skill-category">
-                <h3>Quality Assurance (QA)</h3>
+                <h3>{t.qualityAssurance}</h3>
                 <div className="skill-list">
-                  <span className="skill-item">Manual testing</span>
-                  <span className="skill-item">Requirements validation</span>
-                  <span className="skill-item">Postman</span>
+                  <span className="skill-item">{t.manualTesting}</span>
+                  <span className="skill-item">{t.requirementsValidation}</span>
+                  <span className="skill-item">{t.postman}</span>
                 </div>
               </div>
 
               <div className="skill-category">
-                <h3>Back-end Development</h3>
+                <h3>{t.backendDevelopment}</h3>
                 <div className="skill-list">
-                  <span className="skill-item">PHP</span>
-                  <span className="skill-item">Java</span>
-                  <span className="skill-item">REST APIs</span>
+                  <span className="skill-item">{t.php}</span>
+                  <span className="skill-item">{t.java}</span>
+                  <span className="skill-item">{t.restApis}</span>
                 </div>
               </div>
 
               <div className="skill-category">
-                <h3>Database Management</h3>
+                <h3>{t.databaseManagement}</h3>
                 <div className="skill-list">
-                  <span className="skill-item">MySQL</span>
-                  <span className="skill-item">PostgreSQL</span>
+                  <span className="skill-item">{t.mysql}</span>
+                  <span className="skill-item">{t.postgresql}</span>
                 </div>
               </div>
 
               <div className="skill-category">
-                <h3>Tools & Methods</h3>
+                <h3>{t.toolsAndMethods}</h3>
                 <div className="skill-list">
-                  <span className="skill-item">Git</span>
-                  <span className="skill-item">Agile (Scrum)</span>
-                  <span className="skill-item">Figma</span>
+                  <span className="skill-item">{t.git}</span>
+                  <span className="skill-item">{t.agile}</span>
+                  <span className="skill-item">{t.figma}</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="skills-subsection">
-            <h3 className="subsection-title">Soft Skills & Languages</h3>
+            <h3 className="subsection-title">{t.softSkillsAndLanguages}</h3>
             <div className="skills-grid">
               <div className="skill-category">
-                <h3>Languages</h3>
+                <h3>{t.languages}</h3>
                 <div className="skill-list">
-                  <span className="skill-item">English (C1)</span>
-                  <span className="skill-item">Spanish (B2)</span>
-                  <span className="skill-item">Portuguese (Native)</span>
+                  <span className="skill-item">{t.englishLevel}</span>
+                  <span className="skill-item">{t.spanishLevel}</span>
+                  <span className="skill-item">{t.portugueseLevel}</span>
                 </div>
               </div>
 
               <div className="skill-category">
-                <h3>Soft Skills</h3>
+                <h3>{t.softSkills}</h3>
                 <div className="skill-list">
-                  <span className="skill-item">Problem Solving</span>
+                  <span className="skill-item">{t.problemSolving}</span>
                   <span className="skill-item">Team Collaboration</span>
-                  <span className="skill-item">Communication</span>
-                  <span className="skill-item">Project Management</span>
-                  <span className="skill-item">Quick Learner</span>
-                  <span className="skill-item">Analytical Thinking</span>
+                  <span className="skill-item">{t.communication}</span>
+                  <span className="skill-item">{t.projectManagement}</span>
+                  <span className="skill-item">{t.quickLearner}</span>
+                  <span className="skill-item">{t.analyticalThinking}</span>
                 </div>
               </div>
             </div>

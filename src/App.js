@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import './styles/global.css';
 import './styles/Home.css';
 import './styles/Languages.css';
@@ -21,18 +22,20 @@ import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/experience-skills" element={<ExperienceSkillsPage />} />
-          <Route path="/projects-learning" element={<ProjectsLearningPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/experience-skills" element={<ExperienceSkillsPage />} />
+            <Route path="/projects-learning" element={<ProjectsLearningPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </LanguageProvider>
   );
 }
 
