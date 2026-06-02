@@ -122,7 +122,7 @@ function Carousel({ children, className = '' }) {
         clearInterval(autoScrollIntervalRef.current);
       }
     };
-  }, []);
+  }, [startAutoScroll]);
 
   return (
     <div className={`carousel-wrapper ${className}`}>

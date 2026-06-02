@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Target, Code2, Zap, Globe, Lightbulb, Users } from 'lucide-react';
+import { Target, Globe, Lightbulb, Users } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations';
 import LanguageSwitcher from '../components/LanguageSwitcher';
